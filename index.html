@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetario Culinario</title>
+    <link rel="stylesheet" href="./src/css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>🍳 Recetario Culinario</h1>
+        <p class="subtitle">Descubre recetas deliciosas con tus ingredientes favoritos</p>
+    </header>
+    <div class="container">
+
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput"
+                    placeholder="Busca por ingrediente (ej: pollo, tomate, chocolate...)" >
+                    
+                    
+                <button id="searchBtn">Buscar</button>
+            </div>
+            <div class="ingredient-tags">
+                <div class="tag" data-ingredient="pollo">🍗 Pollo</div>
+                <div class="tag" data-ingredient="pasta">🍝 Pasta</div>
+                <div class="tag" data-ingredient="tomate">🍅 Tomate</div>
+                <div class="tag" data-ingredient="chocolate">🍫 Chocolate</div>
+                <div class="tag" data-ingredient="aguacate">🥑 Aguacate</div>
+                <div class="tag" data-ingredient="salmón">🐟 Salmón</div>
+                <div class="tag" data-ingredient="arroz">🍚 Arroz</div>
+            </div>
+        </div>
+
+        <div id="resultsInfo" class="results-info"></div>
+        <div id="recipesGrid" class="recipes-grid"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="./src/js/busqueda.js"></script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>
