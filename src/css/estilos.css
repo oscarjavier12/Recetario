@@ -62,7 +62,7 @@ h1 {
 
 #searchInput {
     flex: 1;
-    padding: 15px 20px;
+    padding: 15px 50px 15px 20px;
     font-size: 18px;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
@@ -75,7 +75,7 @@ h1 {
     content: "\F52A";
     font-family: 'bootstrap-icons';
     position: absolute;
-    right: 15%;
+    right: calc(90% - 30px);
     font-size: 20px;
     color: #0e0d0d;
     pointer-events: none;
@@ -110,6 +110,7 @@ h1 {
 }
 
 .tag {
+
     padding: 8px 16px;
     background: #E8A147;
     color: white;
@@ -416,17 +417,86 @@ h1 {
     padding-top: 20px;
 }
 
-@media (max-width: 768px) {
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
     h1 {
-        font-size: 2em;
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 28px;
     }
 
     .recipes-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .search-box::before {
+        right: calc(85% - 30px);
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    .search-section {
+        padding: 20px;
     }
 
     .search-box {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    #searchInput {
+        padding: 12px 45px 12px 15px;
+        font-size: 16px;
+    }
+
+    #searchBtn {
+        width: 100%;
+        height: auto;
+        padding: 12px 30px;
+    }
+
+    .search-box::before {
+        right: 15px;
+        top: 12px;
+    }
+
+    .ingredient-tags {
+        gap: 8px;
+    }
+
+    .tag {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .recipe-card {
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .modal-body {
@@ -435,5 +505,55 @@ h1 {
 
     .modal-title {
         font-size: 1.8em;
+    }
+
+    .modal-meta {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .ingredients-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .search-section {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .results-info {
+        font-size: 20px;
+    }
+
+    .recipe-image {
+        height: 200px;
+    }
+
+    .recipe-title {
+        font-size: 1.2em;
+    }
+
+    .modal-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-title {
+        font-size: 1.5em;
+    }
+
+    .section-title {
+        font-size: 1.4em;
     }
 }

@@ -6,13 +6,13 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=800",
         ingredients: ["pollo", "arroz", "curry", "leche de coco", "cebolla", "ajo", "jengibre"],
         fullIngredients: [
-            "500g de pechuga de pollo",
-            "2 tazas de arroz basmati",
-            "2 cucharadas de curry en polvo",
-            "400ml de leche de coco",
-            "1 cebolla grande",
-            "3 dientes de ajo",
-            "1 trozo de jengibre fresco"
+            "125g de pechuga de pollo",
+            "0.5 tazas de arroz basmati",
+            "0.5 cucharadas de curry en polvo",
+            "100ml de leche de coco",
+            "0.25 cebolla grande",
+            "1 diente de ajo",
+            "1 trozo pequeño de jengibre fresco"
         ],
         instructions: [
             "Corta el pollo en cubos medianos y sazónalo con sal y pimienta.",
@@ -27,7 +27,7 @@ const recipes = [
         ],
         time: "45 minutos",
         type: ["Principal"],
-        servings: 4,
+        servings: 1,
         cooking: "Estofado",
         difficulty: "Medio"
     },
@@ -37,10 +37,10 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=800",
         ingredients: ["tomate", "mozzarella", "albahaca", "aceite de oliva"],
         fullIngredients: [
-            "4 tomates grandes maduros",
-            "250g de mozzarella fresca",
+            "2 tomates grandes maduros",
+            "125g de mozzarella fresca",
             "Hojas de albahaca fresca",
-            "4 cucharadas de aceite de oliva extra virgen",
+            "2 cucharadas de aceite de oliva extra virgen",
             "Sal y pimienta al gusto",
             "Vinagre balsámico (opcional)"
         ],
@@ -56,7 +56,7 @@ const recipes = [
         ],
         time: "15 minutos",
         type: ["Entrante", "Vegetariano"],
-        servings: 2,
+        servings: 1,
         cooking: "Crudo",
         difficulty: "Fácil"
     },
@@ -66,12 +66,12 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=800",
         ingredients: ["chocolate", "mantequilla", "huevos", "azúcar", "harina"],
         fullIngredients: [
-            "200g de chocolate negro",
-            "150g de mantequilla",
-            "3 huevos grandes",
-            "200g de azúcar",
-            "100g de harina",
-            "1 cucharadita de extracto de vainilla",
+            "25g de chocolate negro",
+            "20g de mantequilla",
+            "0.5 huevo",
+            "25g de azúcar",
+            "12g de harina",
+            "0.125 cucharadita de extracto de vainilla",
             "Una pizca de sal"
         ],
         instructions: [
@@ -86,7 +86,7 @@ const recipes = [
         ],
         time: "50 minutos",
         type: ["Postre"],
-        servings: 8,
+        servings: 1,
         cooking: "Horno",
         difficulty: "Fácil"
     },
@@ -96,10 +96,10 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800",
         ingredients: ["pasta", "huevos", "panceta", "queso parmesano", "pimienta"],
         fullIngredients: [
-            "400g de espagueti",
-            "4 yemas de huevo",
-            "200g de panceta o guanciale",
-            "100g de queso parmesano rallado",
+            "100g de espagueti",
+            "1 yema de huevo",
+            "50g de panceta o guanciale",
+            "25g de queso parmesano rallado",
             "Pimienta negra recién molida",
             "Sal para el agua de la pasta"
         ],
@@ -116,7 +116,7 @@ const recipes = [
         ],
         time: "25 minutos",
         type: ["Principal"],
-        servings: 4,
+        servings: 1,
         cooking: "Hervido",
         difficulty: "Medio"
     },
@@ -126,12 +126,12 @@ const recipes = [
         image: "https://farm8.staticflickr.com/7118/7019482551_4abd276122.jpg",
         ingredients: ["aguacate", "tomate", "cebolla", "cilantro", "limón", "chile"],
         fullIngredients: [
-            "3 aguacates maduros",
-            "2 tomates medianos",
-            "1/2 cebolla blanca",
-            "1 manojo de cilantro fresco",
-            "2 limones",
-            "1-2 chiles serranos",
+            "0.5 aguacate maduro",
+            "0.3 tomate mediano",
+            "1 cucharada de cebolla blanca picada",
+            "1 ramita de cilantro fresco",
+            "0.3 limón",
+            "0.2 chile serrano",
             "Sal al gusto"
         ],
         instructions: [
@@ -146,7 +146,7 @@ const recipes = [
         ],
         time: "15 minutos",
         type: ["Entrante", "Vegano", "Sin Gluten"],
-        servings: 6,
+        servings: 1,
         cooking: "Crudo",
         difficulty: "Fácil"
     },
@@ -156,10 +156,10 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=800",
         ingredients: ["salmón", "limón", "ajo", "aceite de oliva", "eneldo"],
         fullIngredients: [
-            "4 filetes de salmón (150g cada uno)",
-            "2 limones",
-            "3 dientes de ajo",
-            "4 cucharadas de aceite de oliva",
+            "1 filete de salmón (150g)",
+            "0.5 limón",
+            "1 diente de ajo",
+            "1 cucharada de aceite de oliva",
             "Eneldo fresco",
             "Sal y pimienta al gusto"
         ],
@@ -175,7 +175,7 @@ const recipes = [
         ],
         time: "20 minutos",
         type: ["Principal", "Sin Gluten"],
-        servings: 4,
+        servings: 1,
         cooking: "A la plancha",
         difficulty: "Fácil"
     },
@@ -185,14 +185,14 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800",
         ingredients: ["arroz", "huevos", "guisantes", "zanahoria", "cebolla", "salsa de soja"],
         fullIngredients: [
-            "3 tazas de arroz cocido (de un día anterior)",
-            "3 huevos",
-            "1 taza de guisantes",
-            "2 zanahorias",
-            "1 cebolla",
-            "3 cucharadas de salsa de soja",
-            "2 cucharadas de aceite de sésamo",
-            "2 dientes de ajo",
+            "0.75 tazas de arroz cocido (de un día anterior)",
+            "1 huevo",
+            "0.25 taza de guisantes",
+            "0.5 zanahoria",
+            "0.25 cebolla",
+            "1 cucharada de salsa de soja",
+            "0.5 cucharada de aceite de sésamo",
+            "0.5 diente de ajo",
             "Cebollino fresco"
         ],
         instructions: [
@@ -209,7 +209,7 @@ const recipes = [
         ],
         time: "30 minutos",
         type: ["Principal", "Vegetariano"],
-        servings: 4,
+        servings: 1,
         cooking: "Salteado",
         difficulty: "Medio"
     },
@@ -219,14 +219,14 @@ const recipes = [
         image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
         ingredients: ["pollo", "piña", "chile", "cebolla", "cilantro", "tortillas"],
         fullIngredients: [
-            "600g de muslos de pollo",
-            "1/2 piña fresca",
-            "3 chiles guajillo",
-            "1 cebolla",
+            "100g de muslos de pollo",
+            "2 rodajas de piña fresca",
+            "0.5 chile guajillo",
+            "0.15 cebolla",
             "Cilantro fresco",
-            "12 tortillas de maíz",
-            "2 dientes de ajo",
-            "Jugo de 2 naranjas",
+            "2 tortillas de maíz",
+            "0.3 diente de ajo",
+            "Jugo de 0.3 naranja",
             "Especias: comino, orégano, achiote"
         ],
         instructions: [
@@ -242,13 +242,47 @@ const recipes = [
         ],
         time: "2 horas 30 minutos",
         type: ["Principal"],
-        servings: 6,
+        servings: 1,
         cooking: "A la plancha",
         difficulty: "Medio"
     }
 ];
 
 let currentRecipes = [];
+
+function adjustIngredient(ingredient, originalServings, newServings) {
+    const ratio = newServings / originalServings;
+    
+    // Buscar números en el ingrediente
+    return ingredient.replace(/(\d+(?:[.,]\d+)?)\s*(g|kg|ml|l|tazas?|cucharadas?|cucharaditas?|unidades?)?/gi, (match, number, unit) => {
+        const originalNumber = parseFloat(number.replace(',', '.'));
+        const newNumber = originalNumber * ratio;
+        
+        // Formatear el nuevo número
+        let formatted;
+        if (newNumber % 1 === 0) {
+            formatted = newNumber.toString();
+        } else if (newNumber < 10) {
+            formatted = newNumber.toFixed(1);
+        } else {
+            formatted = Math.round(newNumber).toString();
+        }
+        
+        return `${formatted}${unit ? ' ' + unit : ''}`;
+    });
+}
+
+function updateServings(recipeId, newServings) {
+    const recipe = recipes.find(r => r.id === recipeId);
+    const ingredientsList = document.getElementById('ingredientsList');
+    const servingsDisplay = document.getElementById('servingsDisplay');
+    
+    servingsDisplay.textContent = newServings;
+    
+    ingredientsList.innerHTML = recipe.fullIngredients.map(ing => 
+        `<li>${adjustIngredient(ing, recipe.servings, newServings)}</li>`
+    ).join('');
+}
 
 function searchRecipes(ingredient) {
     ingredient = ingredient.toLowerCase().trim();
@@ -319,7 +353,11 @@ function showRecipe(id) {
                 </div>
                 <div class="meta-item">
                     <span class="meta-label-modal">Porciones</span>
-                    <span class="meta-value">🍽️ ${recipe.servings}</span>
+                    <div class="servings-control">
+                        <button class="servings-btn" onclick="updateServings(${recipe.id}, Math.max(1, ${recipe.servings} - 1))">-</button>
+                        <span class="servings-display" id="servingsDisplay">${recipe.servings}</span>
+                        <button class="servings-btn" onclick="updateServings(${recipe.id}, ${recipe.servings} + 1)">+</button>
+                    </div>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label-modal">Dificultad</span>
@@ -336,7 +374,7 @@ function showRecipe(id) {
             </div>
 
             <h3 class="section-title">📝 Ingredientes</h3>
-            <ul class="ingredients-list">
+            <ul class="ingredients-list" id="ingredientsList">
                 ${recipe.fullIngredients.map(ing => `<li>${ing}</li>`).join('')}
             </ul>
 
