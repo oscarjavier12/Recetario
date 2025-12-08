@@ -252,12 +252,12 @@ let currentRecipes = [];
 
 function adjustIngredient(ingredient, originalServings, newServings) {
     const ratio = newServings / originalServings;
-    
+
     // Buscar números en el ingrediente
     return ingredient.replace(/(\d+(?:[.,]\d+)?)\s*(g|kg|ml|l|tazas?|cucharadas?|cucharaditas?|unidades?)?/gi, (match, number, unit) => {
         const originalNumber = parseFloat(number.replace(',', '.'));
         const newNumber = originalNumber * ratio;
-        
+
         // Formatear el nuevo número
         let formatted;
         if (newNumber % 1 === 0) {
@@ -267,20 +267,31 @@ function adjustIngredient(ingredient, originalServings, newServings) {
         } else {
             formatted = Math.round(newNumber).toString();
         }
-        
-        return `${formatted}${unit ? ' ' + unit : ''}`;
+
+        return `${formatted} ${unit ? ' ' + unit : ''}`;
     });
 }
+
+let currentServings = 1;
 
 function updateServings(recipeId, newServings) {
     const recipe = recipes.find(r => r.id === recipeId);
     const ingredientsList = document.getElementById('ingredientsList');
     const servingsDisplay = document.getElementById('servingsDisplay');
-    
-    servingsDisplay.textContent = newServings;
-    
-    ingredientsList.innerHTML = recipe.fullIngredients.map(ing => 
-        `<li>${adjustIngredient(ing, recipe.servings, newServings)}</li>`
+    const minusBtn = document.getElementById('minusBtn');
+    const plusBtn = document.getElementById('plusBtn');
+    if (newServings >= 16) return;
+    // Actualizar el valor actual
+    currentServings = newServings;
+    servingsDisplay.textContent = '🍽️' + currentServings;
+
+    // Actualizar los botones con el nuevo valor
+    minusBtn.onclick = () => updateServings(recipeId, Math.max(1, currentServings - 1));
+    plusBtn.onclick = () => updateServings(recipeId, currentServings + 1);
+
+    // Recalcular ingredientes
+    ingredientsList.innerHTML = recipe.fullIngredients.map(ing =>
+        `<li>${adjustIngredient(ing, recipe.servings, currentServings)}</li>`
     ).join('');
 }
 
@@ -341,7 +352,11 @@ function showRecipe(id) {
     const modal = document.getElementById('modal');
     const content = document.getElementById('modalContent');
 
+    // Resetear porciones al abrir
+    currentServings = recipe.servings;
+
     content.innerHTML = `
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <img src="${recipe.image}" alt="${recipe.name}" class="modal-image">
         <div class="modal-body">
             <h2 class="modal-title">${recipe.name}</h2>
@@ -354,9 +369,9 @@ function showRecipe(id) {
                 <div class="meta-item">
                     <span class="meta-label-modal">Porciones</span>
                     <div class="servings-control">
-                        <button class="servings-btn" onclick="updateServings(${recipe.id}, Math.max(1, ${recipe.servings} - 1))">-</button>
-                        <span class="servings-display" id="servingsDisplay">${recipe.servings}</span>
-                        <button class="servings-btn" onclick="updateServings(${recipe.id}, ${recipe.servings} + 1)">+</button>
+                        <button class="servings-btn" id="minusBtn"><i class="bi bi-caret-left-square"></i></button>
+                        <span class="servings-display" id="servingsDisplay">🍽️${recipe.servings}</span>
+                        <button class="servings-btn" id="plusBtn"><i class="bi bi-caret-right-square"></i></button>
                     </div>
                 </div>
                 <div class="meta-item">
@@ -387,6 +402,10 @@ function showRecipe(id) {
 
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+
+    // Agregar event listeners después de crear el HTML
+    document.getElementById('minusBtn').onclick = () => updateServings(recipe.id, Math.max(1, currentServings - 1));
+    document.getElementById('plusBtn').onclick = () => updateServings(recipe.id, currentServings + 1);
 }
 
 function closeModal() {
