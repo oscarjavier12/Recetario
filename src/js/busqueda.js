@@ -283,7 +283,7 @@ function updateServings(recipeId, newServings) {
     if (newServings >= 16) return;
     // Actualizar el valor actual
     currentServings = newServings;
-    servingsDisplay.textContent = '🍽️' + currentServings;
+    servingsDisplay.textContent = currentServings;
 
     // Actualizar los botones con el nuevo valor
     minusBtn.onclick = () => updateServings(recipeId, Math.max(1, currentServings - 1));
@@ -370,7 +370,7 @@ function showRecipe(id) {
                     <span class="meta-label-modal">Porciones</span>
                     <div class="servings-control">
                         <button class="servings-btn" id="minusBtn"><i class="bi bi-caret-left-square"></i></button>
-                        <span contenteditable="true" class="servings-display" id="servingsDisplay">🍽️${recipe.servings}</span>
+                        <span contenteditable="true" class="servings-display" id="servingsDisplay">${recipe.servings}</span>
                         <button class="servings-btn" id="plusBtn"><i class="bi bi-caret-right-square"></i></button>
                     </div>
                 </div>
