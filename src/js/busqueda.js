@@ -370,7 +370,7 @@ function showRecipe(id) {
                     <span class="meta-label-modal">Porciones</span>
                     <div class="servings-control">
                         <button class="servings-btn" id="minusBtn"><i class="bi bi-caret-left-square"></i></button>
-                        <span class="servings-display" id="servingsDisplay">🍽️${recipe.servings}</span>
+                        <span contenteditable="true" class="servings-display" id="servingsDisplay">🍽️${recipe.servings}</span>
                         <button class="servings-btn" id="plusBtn"><i class="bi bi-caret-right-square"></i></button>
                     </div>
                 </div>
