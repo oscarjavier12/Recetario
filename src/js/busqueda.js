@@ -280,10 +280,13 @@ function updateServings(recipeId, newServings) {
     const servingsDisplay = document.getElementById('servingsDisplay');
     const minusBtn = document.getElementById('minusBtn');
     const plusBtn = document.getElementById('plusBtn');
-    if (newServings >= 16) return;
+    
+    // Validar que las porciones estén en un rango válido
+    if (newServings < 1 || newServings >= 16) return;
+    
     // Actualizar el valor actual
     currentServings = newServings;
-    servingsDisplay.textContent = currentServings;
+    servingsDisplay.textContent = '🍽️' + currentServings;
 
     // Actualizar los botones con el nuevo valor
     minusBtn.onclick = () => updateServings(recipeId, Math.max(1, currentServings - 1));
@@ -370,7 +373,7 @@ function showRecipe(id) {
                     <span class="meta-label-modal">Porciones</span>
                     <div class="servings-control">
                         <button class="servings-btn" id="minusBtn"><i class="bi bi-caret-left-square"></i></button>
-                        <span contenteditable="true" class="servings-display" id="servingsDisplay">${recipe.servings}</span>
+                        <span contenteditable="true" class="servings-display" id="servingsDisplay">🍽️${recipe.servings}</span>
                         <button class="servings-btn" id="plusBtn"><i class="bi bi-caret-right-square"></i></button>
                     </div>
                 </div>
@@ -406,6 +409,40 @@ function showRecipe(id) {
     // Agregar event listeners después de crear el HTML
     document.getElementById('minusBtn').onclick = () => updateServings(recipe.id, Math.max(1, currentServings - 1));
     document.getElementById('plusBtn').onclick = () => updateServings(recipe.id, currentServings + 1);
+    
+    // Event listener para el span editable
+    const servingsDisplay = document.getElementById('servingsDisplay');
+    
+    // Cuando presiona Enter
+    servingsDisplay.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            servingsDisplay.blur(); // Quita el foco para disparar el evento blur
+        }
+    });
+    
+    // Cuando sale del span (blur)
+    servingsDisplay.addEventListener('blur', () => {
+        const text = servingsDisplay.textContent.replace('🍽️', '').trim();
+        const newServings = parseInt(text);
+        
+        // Validar que sea un número válido
+        if (!isNaN(newServings) && newServings >= 1 && newServings < 16) {
+            updateServings(recipe.id, newServings);
+        } else {
+            // Si no es válido, restaurar el valor anterior
+            servingsDisplay.textContent = '🍽️' + currentServings;
+        }
+    });
+    
+    // Seleccionar solo el número cuando se hace clic (sin el emoji)
+    servingsDisplay.addEventListener('focus', () => {
+        const range = document.createRange();
+        const selection = window.getSelection();
+        range.selectNodeContents(servingsDisplay);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    });
 }
 
 function closeModal() {
